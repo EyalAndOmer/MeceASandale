@@ -1,0 +1,146 @@
+Semestralna praca bude zamerana na turn based hru MeceASandale. 
+
+Velka cast inspiracie isla z popularnej turn based hry Swords and Sandals.
+Bude sa jednat o turn based bojovu hru, kde hrac bude bojovat proti cpu za 
+pouzitia mechanik ako pohyb po arene, utok na protihraca a podobne.
+Hrac si po kazdom suboji bude moct nakupit itemy ako zbrane a brnenie.
+V hre sa bude taktiez nachadzat XP system, cize za kazdy vyhrany zapas 
+ziska hrac niekolko XP a pri dosiahnuti isteho poctu XP ziska hrac novy level.
+S novym levelom si hrac bude moct pridat nove attributy, ktore ho urobia
+este silnejsim. Taktiez od levelu zalezi brnenie, ake si hrac moze kupit za
+hernu menu.
+
+
+Podrobny popis riesenych problemov(work in progress)
+
+-Boj medzi hracom a CPU.
+    -CPU
+        -Logicky vyber najlepsej moznosti
+            -zo zaciatku randomny vyber moznosti
+    -Turn taking system
+        -zacina hrac
+        -maximalne jedna akcia za kolo
+    -Mechaniky boja
+        -sila utoku
+        -dialka utoku
+        -typ utoku
+    -Charakteristiky bojovnika
+        -Zivot
+        -Stamina
+            -Ak stamina na 0 tak bojovnik musi preckat kolo na doplnenie staminy
+            -Dedikovane tlacidlo na doplnenie staminy
+        -Armor
+        -utok zbranou
+        -zmena zbrane - melee/ranged
+        -pohyb od a ku superovi
+    -Ukonecenie boja
+        -Bojovnik prehra ak mu najskor klesne armor na 0 a nasledne zivot na 0
+        -Ak vyhra hrac
+            -Ziska goldy za vyhru
+            -Ziska XP k postupu do dalsieho levelu
+        -Ak prehra hrac
+            -Strati goldy
+                -Mechanika sa bude pocitat na zaklade goldov
+                    -Hrac pri prehre pride o 10% svojich goldov.
+            -Neziska ziadne XP
+-Nakup brnenia
+    -Hrac si bude moct kupit brnenie na nasledujuce casti tela
+        -Hlava
+        -Ramena
+        -Dlane
+        -Hrud
+        -Stit(do jednej z ruk)
+        -Stehna
+        -Lytka
+        -Nohy
+    -Kazdy druh brnenia bude davat hracovi hodnotu armoru(drahsie zmanema viac armoru)
+    -Brnenie sa bude kupovat za goldy
+-Goldy
+    -ingame mena
+    -bude to celociselny kladny integer
+    -pokial klesne pocet goldov pod 0 = GAME OVER
+
+-Nakup zbrani
+    -Hrac bude mat na vyber z dvoch typov zbrani
+        -Melee
+            -Mece
+                -Najviac random zbrane v hre - najvacsi rozsah dmgu
+                -Na odomknutie lepsich mecov bude hrac potrebovat viac bodov v atribute AGILITY
+            -Sekery
+                -Mensi rozsah ako mece
+                -Na odomknutie lepsich sekier bude hrac potrebovat viac bodov v atribute STRENGHT
+            -Bodaky
+                -Najmensi rozsah dmgu v hre, najdrahsie zbrane v hre
+                -Na odomknutie lepsich bodakov bude hrac potrebovat viac bodov v atribute STRENGHT
+                -Bude potrebne viac strenghtu ako pre sekery
+        -Ranged
+            -Luky
+                -Zbrane s najvacsim rangom v hre
+                -Na odomknutie lepsich lukov bude hrac potrebovat viac bodov v atribute AGILITY
+
+        -Body v atribute CHARIZMA znizuju cenu zbrani percentualne
+            -jeden bod = cena o 1% lacnejsia
+
+Level system
+    -Hrac za kazdy vyhrany suboj dostane urcity pocet XP
+        //Todo vymysliet princip na pocitanie XP
+    -pri kazdom novom levely sa pocet XP zresetuje na nulu a zvysi sa pocet potrebnych XP na dalsi level
+    -po dosiahnuti noveho levelu(hrac dosiahne 100% progres k dalsiemu levelu) sa hracovi pripisu 4 body,
+     ktore zadeluje do atribut
+
+-Atributy
+    -Body, ktore zlepsuju siroke spektrum schopnosti hraca
+    -spektrum schopnosti
+        -STRENGHT - zvysuje dmg
+        -AGILITY - zvysuje pohyb po mape
+        -ATTACK - zvysuje % sancu na utok
+        -DEFENSE - znizuje % sancu na utok
+        -CHARISMA - % znizuje ceny v obchodoch
+        -STAMINA - jednotkovo zvysuje doplnanie, maximalnu hodnotu a spotrebu staminy
+    -kazdy atribut zacina na hodnote 1
+    -na zaciatku hry si moze hrac umiestnit 10 bodov
+
+
+-Ukladanie hry
+    -Hrac bude mat moznost ulozit si progres svojej rozohranej hry do suboru
+    -vytvori sa .txt subor, v ktorom sa ulozi objekt s atributami hraca -{
+        Meno-meno hraca,
+        Lvl-level hraca,
+        Xp-pocet xp hraca,
+        Gold-pocet goldov hraca,
+        //Todo vymysliet system oznacovania zbrani a vybavenia v hre
+        Vybavenie{ - druh vybavenia
+            -Hlava-A
+            -Ramena-C
+            -Dlane-D
+            -Hrud-D
+            -Stit(do jednej z ruk)-D
+            -Stehna-A
+            -Lytka-A
+            -Nohy-A
+            -Melee-A
+            -Ranged-A
+        },
+        Atributy{ - pocet bodov v atributoch
+            -Strenght - 15
+            -Agility - 18
+            -Attack - 25
+            -Defense - 80
+            -Charisma - 5
+            -Stamina - 3
+        }
+    }
+
+-Vytvorenie novej postavy
+    -Hrac bude mat moznost zadat meno svojej postavy
+    -Hrac bude musiet rozdelit presne 10 bodov do jednotlivych atribut.
+
+
+
+
+
+
+
+
+
+
