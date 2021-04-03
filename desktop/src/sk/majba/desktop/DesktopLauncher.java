@@ -9,6 +9,7 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.title = "Mece a Sandale";
 		config.width = 800;
+		config.vSyncEnabled = true;
 		config.height = 480;
 		new LwjglApplication(new MeceASandale(), config);
 	}
