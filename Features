@@ -3,7 +3,7 @@ Semestralna praca bude zamerana na turn based hru sk.majba.MeceASandale.
 Velka cast inspiracie isla z popularnej turn based hry Swords and Sandals.
 Bude sa jednat o turn based bojovu hru, kde hrac bude bojovat proti cpu za 
 pouzitia mechanik ako pohyb po arene, utok na protihraca a podobne.
-Hrac si po kazdom suboji bude moct nakupit itemy ako zbrane a brnenie.
+sk.majba.Hrac si po kazdom suboji bude moct nakupit itemy ako zbrane a brnenie.
 V hre sa bude taktiez nachadzat XP system, cize za kazdy vyhrany zapas 
 ziska hrac niekolko XP a pri dosiahnuti isteho poctu XP ziska hrac novy level.
 S novym levelom si hrac bude moct pridat nove attributy, ktore ho urobia
@@ -41,10 +41,10 @@ Podrobny popis riesenych problemov(work in progress)
         -Ak prehra hrac
             -Strati goldy
                 -Mechanika sa bude pocitat na zaklade goldov
-                    -Hrac pri prehre pride o 10% svojich goldov.
+                    -sk.majba.Hrac pri prehre pride o 10% svojich goldov.
             -Neziska ziadne XP
 -Nakup brnenia
-    -Hrac si bude moct kupit brnenie na nasledujuce casti tela
+    -sk.majba.Hrac si bude moct kupit brnenie na nasledujuce casti tela
         -Hlava
         -Ramena
         -Dlane
@@ -61,7 +61,7 @@ Podrobny popis riesenych problemov(work in progress)
     -pokial klesne pocet goldov pod 0 = GAME OVER
 
 -Nakup zbrani
-    -Hrac bude mat na vyber z dvoch typov zbrani
+    -sk.majba.Hrac bude mat na vyber z dvoch typov zbrani
         -Melee
             -Mece
                 -Najviac random zbrane v hre - najvacsi rozsah dmgu
@@ -82,13 +82,13 @@ Podrobny popis riesenych problemov(work in progress)
             -jeden bod = cena o 1% lacnejsia
 
 Level system
-    -Hrac za kazdy vyhrany suboj dostane urcity pocet XP
+    -sk.majba.Hrac za kazdy vyhrany suboj dostane urcity pocet XP
         //Todo vymysliet princip na pocitanie XP
     -pri kazdom novom levely sa pocet XP zresetuje na nulu a zvysi sa pocet potrebnych XP na dalsi level
     -po dosiahnuti noveho levelu(hrac dosiahne 100% progres k dalsiemu levelu) sa hracovi pripisu 4 body,
      ktore zadeluje do atribut
 
--Atributy
+-sk.majba.Atributy
     -Body, ktore zlepsuju siroke spektrum schopnosti hraca
     -spektrum schopnosti
         -STRENGHT - zvysuje dmg
@@ -102,7 +102,7 @@ Level system
 
 
 -Ukladanie hry
-    -Hrac bude mat moznost ulozit si progres svojej rozohranej hry do suboru
+    -sk.majba.Hrac bude mat moznost ulozit si progres svojej rozohranej hry do suboru
     -vytvori sa .txt subor, v ktorom sa ulozi objekt s atributami hraca -{
         Meno-meno hraca,
         Lvl-level hraca,
@@ -121,7 +121,7 @@ Level system
             -Melee-A
             -Ranged-A
         },
-        Atributy{ - pocet bodov v atributoch
+        sk.majba.Atributy{ - pocet bodov v atributoch
             -Strenght - 15
             -Agility - 18
             -Attack - 25
@@ -132,8 +132,8 @@ Level system
     }
 
 -Vytvorenie novej postavy
-    -Hrac bude mat moznost zadat meno svojej postavy
-    -Hrac bude musiet rozdelit presne 10 bodov do jednotlivych atribut.
+    -sk.majba.Hrac bude mat moznost zadat meno svojej postavy
+    -sk.majba.Hrac bude musiet rozdelit presne 10 bodov do jednotlivych atribut.
 
 
 
