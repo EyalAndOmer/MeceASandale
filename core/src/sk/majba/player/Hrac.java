@@ -7,6 +7,8 @@ public class Hrac extends Fighter{
     private int xpNeededToLvlUp;
     private int gold;
 
+    int powerLevel; //sucet hodnot poweru armoru a zbrane, sluzi na vygenerovanie seberovneho alebo slabsieho CPU supera.
+
     public Hrac(String meno, int level, Atributy atributy, int xp, int gold) {
         super(meno, level, atributy);
         this.xp = xp;

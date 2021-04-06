@@ -9,8 +9,8 @@ public class Weapon extends Item {
     private final DamageRange damageRange;
 
     public Weapon(String name, ItemType itemType, WeaponRange weaponRange,WeaponType weaponType,
-                  int minimalDmg, int maximalDmg, int price) {
-        super(name, itemType, price);
+                  int minimalDmg, int maximalDmg, int price, int powerPoints) {
+        super(name, itemType, price, powerPoints);
         this.weaponType = weaponType;
         this.weaponRange = weaponRange;
         this.damageRange = new DamageRange(minimalDmg, maximalDmg);

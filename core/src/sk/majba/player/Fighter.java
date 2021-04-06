@@ -1,7 +1,10 @@
 package sk.majba.player;
 
 import sk.majba.items.Armor;
+import sk.majba.items.Item;
 import sk.majba.items.Weapon;
+
+import java.util.Collection;
 
 public class Fighter {
     private final String meno;
@@ -9,38 +12,18 @@ public class Fighter {
     private Atributy atributy;
     private Equipment equipment;
 
-    private Armor helmet;
-    private Armor chestplate;
-    private Armor upperHand;
-    private Armor lowerHand;
-    private Armor shield;
-    private Armor upperLeg;
-    private Armor lowerLeg;
-    private Armor shoes;
-    private Weapon meleeWeapon;
-
     private int health;
     private int armor;
     private int stamina;
 
     public static final int MAXIMAL_LVL = 45;
+    public static final int ATTRIBUTES_PER_LVL_UP = 4;
 
     public Fighter(String meno, int level, Atributy atributy) {
         this.meno = meno;
         this.level = level;
         this.atributy = atributy;
         this.equipment = new Equipment();
-
-//        items[0] = this.helmet;
-//        items[1] = this.chestplate;
-//        items[2] = this.upperHand;
-//        items[3] = this.lowerHand;
-//        items[4] = this.shield;
-//        items[5] = this.upperLeg;
-//        items[6] = this.lowerLeg;
-//        items[7] = this.shoes;
-//        items[8] = this.meleeWeapon;
-
     }
 
     public String getMeno() {
@@ -59,6 +42,11 @@ public class Fighter {
         this.atributy = atributy;
     }
 
+    public Object[] getEquipment() {
+        return this.equipment.getEquipment().values().toArray();
+    }
 
-
+    public void setGear(Item item) {
+        this.equipment.setGear(item);
+    }
 }

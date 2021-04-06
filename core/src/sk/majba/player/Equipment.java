@@ -1,8 +1,6 @@
 package sk.majba.player;
 
-import sk.majba.items.ArmorType;
-import sk.majba.items.Item;
-import sk.majba.items.WeaponRange;
+import sk.majba.items.*;
 
 import java.util.HashMap;
 
@@ -18,8 +16,20 @@ public class Equipment {
 
         //Naplnenie Equipmentu vsetkymi druhmi rangu zbrani
         for (int i = 0; i < WeaponRange.values().length; i++) {
-            this.equipment.put(WeaponRange.values()[i].getWeaponType(), null);
+            this.equipment.put(WeaponRange.values()[i].toString(), null);
         }
         System.out.println(this.equipment);
+    }
+
+    public HashMap<String, Item> getEquipment() {
+        return this.equipment;
+    }
+
+    public void setGear(Item item) {
+        if (item instanceof Weapon) {
+            this.equipment.put(((Weapon)item).getWeaponRange().toString(), item);
+        } else if (item instanceof Armor) {
+            this.equipment.put(((Armor)item).getArmorType().toString(), item);
+        }
     }
 }
