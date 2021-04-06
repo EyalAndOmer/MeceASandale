@@ -1,7 +1,7 @@
 package sk.majba.items;
 
 public enum WeaponType {
-    SWORD('S'), AXE('A');
+    SWORD('S'), AXE('A'), NONBUYABLE('N');
 
     private final char weaponType;
 

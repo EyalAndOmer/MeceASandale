@@ -4,8 +4,8 @@ public class Armor extends Item{
 
     private ArmorType armorType;
 
-    public Armor(String name, ItemType itemType, ArmorType armorType) {
-        super(name, itemType);
+    public Armor(String name, ItemType itemType, ArmorType armorType, int price) {
+        super(name, itemType, price);
         this.armorType = armorType;
     }
 

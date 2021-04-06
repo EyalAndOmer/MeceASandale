@@ -5,9 +5,10 @@ import sk.majba.items.Item;
 import sk.majba.items.Weapon;
 
 public class Fighter {
-    private String meno;
-    private int level;
+    private final String meno;
+    private final int level;
     private Atributy atributy;
+    private Equipment equipment;
 
     private Armor helmet;
     private Armor chestplate;
@@ -25,6 +26,7 @@ public class Fighter {
         this.meno = meno;
         this.level = level;
         this.atributy = atributy;
+        this.equipment = new Equipment();
 
 //        items[0] = this.helmet;
 //        items[1] = this.chestplate;

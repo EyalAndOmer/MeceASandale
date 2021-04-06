@@ -13,4 +13,5 @@ public enum ArmorType {
     public String getArmorType() {
         return this.armorType;
     }
+
 }

@@ -1,15 +1,15 @@
 package sk.majba.items;
 
 public enum WeaponRange {
-    RANGED('R'), MELEE('M');
+    RANGED("rangedWeapon"), MELEE("meleeWeapon");
 
-    private final char weaponRange;
+    private final String  weaponRange;
 
-    WeaponRange(char weaponRange) {
+    WeaponRange(String weaponRange) {
         this.weaponRange = weaponRange;
     }
 
-    public char getWeaponType() {
+    public String getWeaponType() {
         return this.weaponRange;
     }
 }

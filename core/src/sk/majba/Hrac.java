@@ -3,11 +3,13 @@ package sk.majba;
 public class Hrac extends Fighter{
     private int xp;
     private int xpNeededToLvlUp;
+    private int gold;
 
-    public Hrac(String meno, int level, Atributy atributy, int xp) {
+    public Hrac(String meno, int level, Atributy atributy, int xp, int gold) {
         super(meno, level, atributy);
         this.xp = xp;
         this.xpNeededToLvlUp = 1000;
+        this.gold = gold;
     }
 
     public void levelUp(Atributy atributy) {

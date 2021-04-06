@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class Weapon extends Item {
 
-    private WeaponType weaponType;
-    private WeaponRange weaponRange;
-    private DamageRange damageRange;
+    private final WeaponType weaponType;
+    private final WeaponRange weaponRange;
+    private final DamageRange damageRange;
 
     public Weapon(String name, ItemType itemType, WeaponRange weaponRange,WeaponType weaponType,
-                  int minimalDmg, int maximalDmg) {
-        super(name, itemType);
+                  int minimalDmg, int maximalDmg, int price) {
+        super(name, itemType, price);
         this.weaponType = weaponType;
         this.weaponRange = weaponRange;
         this.damageRange = new DamageRange(minimalDmg, maximalDmg);

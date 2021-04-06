@@ -18,7 +18,6 @@ public class DamageRange {
             this.attackValues[i][1] = (int)(Math.round(current_start + subintervalLenght));
             current_start += subintervalLenght;
         }
-        System.out.println(Arrays.deepToString(this.attackValues));
     }
 
     public int getDamageUtoku(char typUtoku) {
