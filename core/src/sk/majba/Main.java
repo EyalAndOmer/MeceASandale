@@ -14,7 +14,6 @@ public class Main {
         Hrac fero = new Hrac("Fero", 1,
                 new Atributy(5, 5, 1, 1, 1, 1), 0, 0);
         System.out.println(fero.toString());
-        fero.levelUp(new Atributy(5, 5, 5, 1, 1, 1));
         System.out.println(fero.toString());
 
     }

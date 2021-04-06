@@ -19,6 +19,10 @@ public class Fighter {
     private Armor shoes;
     private Weapon meleeWeapon;
 
+    private int health;
+    private int armor;
+    private int stamina;
+
     public static final int MAXIMAL_LVL = 45;
 
     public Fighter(String meno, int level, Atributy atributy) {

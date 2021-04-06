@@ -1,5 +1,7 @@
 package sk.majba.player;
 
+import com.badlogic.gdx.Application;
+
 public class Hrac extends Fighter{
     private int xp;
     private int xpNeededToLvlUp;
@@ -12,7 +14,12 @@ public class Hrac extends Fighter{
         this.gold = gold;
     }
 
-    public void levelUp(Atributy atributy) {
+    /**
+     * Proces lvl upu u hraca, zvysovanie atribut o hodnotu
+    * @param atributy aktualne atributy hraca
+     * @param pointsForLevelUp pocet bodov, ktore hrac moze vlozit do atribut
+     */
+    public void levelUp(Atributy atributy, int pointsForLevelUp) {
         this.xp = 0;
         this.xpNeededToLvlUp *= 2;
         super.setAtributy(atributy);
