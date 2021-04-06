@@ -4,6 +4,8 @@ import sk.majba.items.ItemType;
 import sk.majba.items.Weapon;
 import sk.majba.items.WeaponRange;
 import sk.majba.items.WeaponType;
+import sk.majba.player.Atributy;
+import sk.majba.player.Hrac;
 
 public class Main {
     public static void main(String[] args) {

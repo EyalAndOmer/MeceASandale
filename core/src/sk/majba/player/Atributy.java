@@ -1,4 +1,4 @@
-package sk.majba;
+package sk.majba.player;
 
 public class Atributy {
     private int strenght;
@@ -67,7 +67,7 @@ public class Atributy {
 
     @Override
     public String toString() {
-        return "sk.majba.Atributy{" +
+        return "sk.majba.player.Atributy{" +
                 "strenght=" + strenght +
                 ", agility=" + agility +
                 ", attack=" + attack +

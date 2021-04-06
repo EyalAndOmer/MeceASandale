@@ -1,7 +1,6 @@
-package sk.majba;
+package sk.majba.player;
 
 import sk.majba.items.Armor;
-import sk.majba.items.Item;
 import sk.majba.items.Weapon;
 
 public class Fighter {

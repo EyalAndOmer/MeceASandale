@@ -1,4 +1,4 @@
-package sk.majba;
+package sk.majba.player;
 
 import sk.majba.items.ArmorType;
 import sk.majba.items.Item;

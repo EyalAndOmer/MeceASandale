@@ -1,4 +1,4 @@
-package sk.majba;
+package sk.majba.player;
 
 public class Hrac extends Fighter{
     private int xp;
@@ -20,7 +20,7 @@ public class Hrac extends Fighter{
 
     @Override
     public String toString() {
-        return "sk.majba.Hrac{" +
+        return "sk.majba.player.Hrac{" +
                 "meno='" + super.getMeno() + '\'' +
                 ", level=" + super.getLevel() +
                 ", atributy=" + super.getAtributy().toString() +
