@@ -1,17 +1,18 @@
 package sk.majba.items;
 
 public class ItemSet {
-    private Armor helmet;
-    private Armor chestplate;
-    private Armor upperHand;
-    private Armor lowerHand;
-    private Armor shield;
-    private Armor upperLeg;
-    private Armor lowerLeg;
-    private Armor shoes;
-    private Weapon meleeWeapon;
+    private final Armor helmet;
+    private final Armor chestplate;
+    private final Armor upperHand;
+    private final Armor lowerHand;
+    private final Armor shield;
+    private final Armor upperLeg;
+    private final Armor lowerLeg;
+    private final Armor shoes;
+    private final Weapon meleeWeapon;
+    private String nazovSetu;
 
-    public ItemSet(Armor helmet, Armor chestplate, Armor upperHand, Armor lowerHand, Armor shield,
+    public ItemSet(String nazovSetu, Armor helmet, Armor chestplate, Armor upperHand, Armor lowerHand, Armor shield,
                    Armor upperLeg, Armor lowerLeg, Armor shoes, Weapon meleeWeapon) {
         this.helmet = helmet;
         this.chestplate = chestplate;
@@ -22,5 +23,6 @@ public class ItemSet {
         this.lowerLeg = lowerLeg;
         this.shoes = shoes;
         this.meleeWeapon = meleeWeapon;
+        this.nazovSetu = nazovSetu;
     }
 }

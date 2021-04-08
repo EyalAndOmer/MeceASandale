@@ -1,8 +1,7 @@
 package sk.majba.items;
 
 public enum ArmorType {
-    HEAD("head"), CHEST("chest"), UPPERARM("upperarm"), LOWERARM("lowerarm"), SHIELD("shield"), UPPERLEG("uppgerleg"),
-    LOWERLEG("lowerleg"), SHOES("shoes");
+    HEAD("head"), CHEST("chest"), ARMS("arms"), SHIELD("shield"), LEGS("legs");
 
     private final String armorType;
 

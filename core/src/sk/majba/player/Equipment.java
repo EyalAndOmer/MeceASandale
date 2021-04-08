@@ -22,7 +22,7 @@ public class Equipment {
     }
 
     public HashMap<String, Item> getEquipment() {
-        return this.equipment;
+        return new HashMap<>(this.equipment);
     }
 
     public void setGear(Item item) {

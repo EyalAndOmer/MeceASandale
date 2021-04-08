@@ -5,12 +5,14 @@ import sk.majba.items.Item;
 import sk.majba.items.Weapon;
 
 import java.util.Collection;
+import java.util.Set;
 
 public class Fighter {
     private final String meno;
     private final int level;
     private Atributy atributy;
     private Equipment equipment;
+    private int powerPoints;
 
     private int health;
     private int armor;
@@ -24,6 +26,7 @@ public class Fighter {
         this.level = level;
         this.atributy = atributy;
         this.equipment = new Equipment();
+        this.powerPoints = 0;
     }
 
     public String getMeno() {
@@ -46,7 +49,23 @@ public class Fighter {
         return this.equipment.getEquipment().values().toArray();
     }
 
-    public void setGear(Item item) {
-        this.equipment.setGear(item);
+    public void setGear(Item ... items) {
+        for (int i = 0; i < items.length; i++) {
+            this.equipment.setGear(items[i]);
+        }
+        this.setPowerPoints();
+    }
+
+    private void setPowerPoints() {
+        Object[] setItemov = this.equipment.getEquipment().values().toArray();
+        for (int i = 0; i < setItemov.length; i++) {
+            if (setItemov[i] != null) {
+                this.powerPoints += ((Item)setItemov[i]).getPowerPoints();
+            }
+        }
+    }
+
+    public int getPowerPoints() {
+        return this.powerPoints;
     }
 }
