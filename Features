@@ -138,6 +138,21 @@ Level system
 
 
 
+-Akcie, ktore budu ovplyvnovat attributy
+    -utok
+        -sanca utoku
+        -damage utoku
+    -obrana
+        -sanca brany
+        -redukcia utoku
+    -gold income
+        -zvysenie poctu golgov zo zapasov
+    -ceny v obchodoch
+        -zlava na itemy v obchode
+
+
+
+
 
 
 

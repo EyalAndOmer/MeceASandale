@@ -17,52 +17,8 @@ public class Atributy {
         this.stamina = stamina;
     }
 
-    public int getStrenght() {
-        return strenght;
-    }
-
-    public void setStrenght(int strenght) {
-        this.strenght = strenght;
-    }
-
-    public int getAgility() {
-        return agility;
-    }
-
-    public void setAgility(int agility) {
-        this.agility = agility;
-    }
-
-    public int getAttack() {
-        return attack;
-    }
-
-    public void setAttack(int attack) {
-        this.attack = attack;
-    }
-
-    public int getDefence() {
-        return defence;
-    }
-
-    public void setDefence(int defence) {
-        this.defence = defence;
-    }
-
-    public int getCharisma() {
-        return charisma;
-    }
-
-    public void setCharisma(int charisma) {
-        this.charisma = charisma;
-    }
-
-    public int getStamina() {
-        return stamina;
-    }
-
-    public void setStamina(int stamina) {
-        this.stamina = stamina;
+    public int getAttributePoints() {
+        return 0;
     }
 
     @Override
