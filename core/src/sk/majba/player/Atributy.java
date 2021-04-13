@@ -1,35 +1,28 @@
 package sk.majba.player;
 
 public class Atributy {
-    private int strenght;
-    private int agility;
-    private int attack;
-    private int defence;
-    private int charisma;
-    private int stamina;
-
-    public Atributy(int strenght, int agility, int attack, int defence, int charisma, int stamina) {
-        this.strenght = strenght;
-        this.agility = agility;
-        this.attack = attack;
-        this.defence = defence;
-        this.charisma = charisma;
-        this.stamina = stamina;
+    private final int[] attributePoints;
+    private int attributePointsTotal;
+    public Atributy(int ... attributes) {
+        this.attributePointsTotal = 0;
+        this.attributePoints = new int[attributes.length];
+        for (int i = 0; i < AttributeType.values().length; i++) {
+            this.attributePoints[i] = attributes[i];
+            this.attributePointsTotal += attributes[i];
+        }
     }
 
-    public int getAttributePoints() {
-        return 0;
+    public int getAttributePointsTotal() {
+        return this.attributePointsTotal;
     }
 
     @Override
     public String toString() {
-        return "sk.majba.player.Atributy{" +
-                "strenght=" + strenght +
-                ", agility=" + agility +
-                ", attack=" + attack +
-                ", defence=" + defence +
-                ", charisma=" + charisma +
-                ", stamina=" + stamina +
-                '}';
+        AttributeType[] attributeTypes = AttributeType.values();
+        StringBuilder returnValue = new StringBuilder();
+        for (int i = 0; i < attributeTypes.length; i++) {
+            returnValue.append(attributeTypes[i].getAttributeName()).append(" ").append(this.attributePoints[i]);
+        }
+        return returnValue.toString();
     }
 }
