@@ -3,11 +3,12 @@ package sk.majba;
 import sk.majba.items.*;
 import sk.majba.player.Atributy;
 import sk.majba.player.Hrac;
+import sk.majba.player.NotAllAttributesPresentException;
 
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NotAllAttributesPresentException {
         //Generovanie druhu vyzbroje
         Weapon zbran1 = new Weapon("ostraPalica", ItemType.WEAPON, WeaponRange.MELEE,
                 WeaponType.NONBUYABLE, 1, 4, 50, 5);
@@ -18,7 +19,7 @@ public class Main {
         Armor nohy1 = new Armor("zaciatocnickeNohy", ItemType.ARMOR, ArmorType.LEGS, 200, 10, 100);
 
         Hrac fero = new Hrac("Fero", 1,
-                new Atributy(5, 5, 1, 1, 1, 1), 0, 0);
+                new Atributy(5, 5, 1, 1, 1, 1, 1), 0, 0);
 
         fero.setGear(zbran1, helma1, hrudnik1, stit1, ruky1, nohy1);
         Object[] feroveItemy = fero.getEquipment();
