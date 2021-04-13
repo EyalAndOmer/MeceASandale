@@ -25,7 +25,7 @@ public class Atributy {
         AttributeType[] attributeTypes = AttributeType.values();
         StringBuilder returnValue = new StringBuilder();
         for (int i = 0; i < attributeTypes.length; i++) {
-            returnValue.append(attributeTypes[i].getAttributeName()).append(" ").append(this.attributePoints[i]);
+            returnValue.append(attributeTypes[i].getAttributeName()).append(" ").append(this.attributePoints[i]).append("\n");
         }
         return returnValue.toString();
     }
