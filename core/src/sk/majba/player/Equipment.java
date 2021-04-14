@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 public class Equipment {
     private HashMap<String, Item> equipment;
+    private int numberOfItems;
 
     public Equipment() {
         this.equipment = new HashMap<String, Item>();
@@ -18,7 +19,10 @@ public class Equipment {
         for (int i = 0; i < WeaponRange.values().length; i++) {
             this.equipment.put(WeaponRange.values()[i].toString(), null);
         }
-        System.out.println(this.equipment);
+
+        this.numberOfItems = this.equipment.size();
+
+        System.out.println(this.numberOfItems);
     }
 
     public HashMap<String, Item> getEquipment() {
@@ -31,5 +35,13 @@ public class Equipment {
         } else if (item instanceof Armor) {
             this.equipment.put(((Armor)item).getArmorType().toString(), item);
         }
+    }
+
+    public boolean isFull() {
+        return false;
+    }
+
+    public static void main(String[] args) {
+        new Equipment();
     }
 }

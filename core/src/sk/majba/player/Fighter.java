@@ -38,7 +38,11 @@ public class Fighter {
     }
 
     public Atributy getAtributy() {
-        return atributy;
+        return this.atributy;
+    }
+
+    public int[] getAttributePoints() {
+        return this.atributy.getAttributePoints();
     }
 
     public void setAtributy(Atributy atributy) {

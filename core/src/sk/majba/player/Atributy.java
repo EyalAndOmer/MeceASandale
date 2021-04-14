@@ -6,7 +6,8 @@ public class Atributy {
     public Atributy(int ... attributes) throws NotAllAttributesPresentException {
 
         if (attributes.length != AttributeType.values().length) {
-            throw new NotAllAttributesPresentException("Number of attributes is not equal to AttributeTypes length ");
+            throw new NotAllAttributesPresentException("Number of attributes is not equal to the length of " +
+                    "AttributeTypes ");
         }
         this.attributePointsTotal = 0;
         this.attributePoints = new int[attributes.length];
@@ -18,6 +19,10 @@ public class Atributy {
 
     public int getAttributePointsTotal() {
         return this.attributePointsTotal;
+    }
+
+    public int[] getAttributePoints() {
+        return this.attributePoints;
     }
 
     @Override

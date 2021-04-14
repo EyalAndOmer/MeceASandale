@@ -1,15 +1,15 @@
 package sk.majba.items;
 
 public enum WeaponType {
-    SWORD('S'), AXE('A'), NONBUYABLE('N');
+    SWORD("sword"), AXE("axe"), BOW("bow"), NONBUYABLE("nonbuyable");
 
-    private final char weaponType;
+    private final String weaponType;
 
-    WeaponType(char weaponType) {
+    WeaponType(String weaponType) {
         this.weaponType = weaponType;
     }
 
-    public char getWeaponType() {
+    public String getWeaponType() {
         return this.weaponType;
     }
 }
