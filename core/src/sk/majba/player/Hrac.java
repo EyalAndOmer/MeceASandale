@@ -1,13 +1,9 @@
 package sk.majba.player;
 
-import com.badlogic.gdx.Application;
-
-public class Hrac extends Fighter{
+public class Hrac extends Fighter {
     private int xp;
     private int xpNeededToLvlUp;
     private int gold;
-
-    int powerLevel; //sucet hodnot poweru armoru a zbrane, sluzi na vygenerovanie seberovneho alebo slabsieho CPU supera.
 
     public Hrac(String meno, int level, Atributy atributy, int xp, int gold) {
         super(meno, level, atributy);

@@ -41,7 +41,6 @@ public class GameArea {
         ItemSet sedlak = new ItemSet(1, ostraPalica, null, null, null, null, null, null);
         this.itemSets.add(sedlak);
 
-        System.out.println(this.itemSets);
     }
 
     public ArrayList<ItemSet> getItemSets() {

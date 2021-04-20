@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class ItemSet {
-    private Item[] itemSetItems;
+    private HashMap<String, Item> itemSetItems;
     private int unlockLvl;
     public ItemSet(int unlockLvl, Item...items) throws NotAllItemsRequiredForItemSetException {
         int totalItems = WeaponRange.values().length + ArmorType.values().length;
@@ -14,27 +14,25 @@ public class ItemSet {
             throw new NotAllItemsRequiredForItemSetException("Number of items in set is lower or greater than the " +
                     "required number.");
         }
-        HashMap<String, Item> copyOfItems = new HashMap<>();
+        this.itemSetItems = new HashMap<>();
 
         for (Item item : items) {
             if (item != null) {
                 if (item instanceof Armor) {
-                    if (copyOfItems.containsKey(((Armor) item).getArmorType().getArmorType())) {
+                    if (this.itemSetItems.containsKey(((Armor)item).getArmorType().getArmorType())) {
                         throw new NotAllItemsRequiredForItemSetException("Duplicate equipment types found.");
                     } else {
-                        copyOfItems.put(((Armor) item).getArmorType().getArmorType(), item);
+                        this.itemSetItems.put(((Armor)item).getArmorType().getArmorType(), item);
                     }
                 } else if (item instanceof Weapon) {
-                    if (copyOfItems.containsKey(((Weapon) item).getWeaponRange().getWeaponType())) {
+                    if (this.itemSetItems.containsKey(((Weapon)item).getWeaponRange().getWeaponType())) {
                         throw new NotAllItemsRequiredForItemSetException("Duplicate equipment types found.");
                     } else {
-                        copyOfItems.put(((Weapon) item).getWeaponType().getWeaponType(), item);
+                        this.itemSetItems.put(((Weapon)item).getWeaponRange().getWeaponType(), item);
                     }
                 }
             }
         }
-        this.itemSetItems = new Item[items.length];
-        System.arraycopy(items, 0, this.itemSetItems, 0, items.length);
 
         this.unlockLvl = unlockLvl;
     }
@@ -43,13 +41,24 @@ public class ItemSet {
         return this.unlockLvl >= fighter.getLevel();
     }
 
+    public Item[] getItemSetItems() {
+        return this.itemSetItems.values().toArray(new Item[0]);
+    }
+
+    public Item getItemFromSet(String itemType) {
+        return this.itemSetItems.get(itemType);
+    }
+
+
+
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder();
 
-        for (int i = 0; i < this.itemSetItems.length; i++) {
-            if (this.itemSetItems[i] != null) {
-                output.append(this.itemSetItems[i].getName()).append("\n");
+        Item[] itemsInSet = this.itemSetItems.values().toArray(new Item[0]);
+        for (int i = 0; i < itemsInSet.length; i++) {
+            if (itemsInSet[i] != null) {
+                output.append(itemsInSet[i].getName()).append("\n");
             }
         }
         return "ItemSet{" +
