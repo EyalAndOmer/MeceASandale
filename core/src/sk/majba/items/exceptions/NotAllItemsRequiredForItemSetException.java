@@ -1,7 +1,7 @@
-package sk.majba.items;
+package sk.majba.items.exceptions;
 
 public class NotAllItemsRequiredForItemSetException extends Exception {
-    public NotAllItemsRequiredForItemSetException (String message){
+    public NotAllItemsRequiredForItemSetException (String message) {
         super(message);
     }
 }

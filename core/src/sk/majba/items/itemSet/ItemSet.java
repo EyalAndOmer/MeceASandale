@@ -1,8 +1,9 @@
-package sk.majba.items;
+package sk.majba.items.itemSet;
 
+import sk.majba.items.*;
+import sk.majba.items.exceptions.NotAllItemsRequiredForItemSetException;
 import sk.majba.player.Fighter;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class ItemSet {

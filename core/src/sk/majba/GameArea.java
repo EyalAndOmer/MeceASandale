@@ -1,8 +1,10 @@
 package sk.majba;
 
 import sk.majba.items.*;
-
-import java.util.ArrayList;
+import sk.majba.items.exceptions.DuplicateItemSetException;
+import sk.majba.items.exceptions.NotAllItemsRequiredForItemSetException;
+import sk.majba.items.itemSet.ItemSet;
+import sk.majba.items.itemSet.ItemSetsCatalog;
 
 public class GameArea {
     private ItemSetsCatalog itemSetsCatalog;

@@ -1,5 +1,7 @@
 package sk.majba.player;
 
+import sk.majba.player.exceptions.NotAllAttributesPresentException;
+
 public class Atributy {
     private final int[] attributePoints;
     private int attributePointsTotal;

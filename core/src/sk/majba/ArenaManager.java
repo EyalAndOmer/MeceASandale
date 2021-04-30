@@ -1,11 +1,9 @@
 package sk.majba;
 
-import sk.majba.items.ArmorType;
 import sk.majba.items.Item;
-import sk.majba.items.ItemSet;
-import sk.majba.items.WeaponRange;
+import sk.majba.items.itemSet.ItemSet;
 import sk.majba.player.*;
-import java.util.TreeMap;
+import sk.majba.player.exceptions.NotAllAttributesPresentException;
 
 
 import java.util.*;

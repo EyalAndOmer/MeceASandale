@@ -1,9 +1,9 @@
 package sk.majba;
 
-import sk.majba.items.NotAllItemsRequiredForItemSetException;
+import sk.majba.items.exceptions.NotAllItemsRequiredForItemSetException;
 import sk.majba.player.Atributy;
 import sk.majba.player.Hrac;
-import sk.majba.player.NotAllAttributesPresentException;
+import sk.majba.player.exceptions.NotAllAttributesPresentException;
 
 public class Game {
     private final GameArea gameArea;

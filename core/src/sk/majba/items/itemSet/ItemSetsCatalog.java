@@ -1,4 +1,6 @@
-package sk.majba.items;
+package sk.majba.items.itemSet;
+
+import sk.majba.items.exceptions.DuplicateItemSetException;
 
 import java.util.ArrayList;
 
