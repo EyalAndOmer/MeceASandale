@@ -4,6 +4,7 @@ import sk.majba.items.Armor;
 import sk.majba.items.Item;
 import sk.majba.items.Weapon;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Set;
 
@@ -71,5 +72,19 @@ public class Fighter {
 
     public int getPowerPoints() {
         return this.powerPoints;
+    }
+
+    @Override
+    public String toString() {
+        return "Fighter{" +
+                "meno='" + meno + '\n' +
+                "level=" + level + "\n" +
+                "atributy= {" + "\n" + atributy.toString() +
+                "}\n equipment=" + this.equipment.toString() +
+                "powerPoints=" + powerPoints +
+                "health=" + health +
+                "armor=" + armor +
+                "stamina=" + stamina +
+                '}';
     }
 }

@@ -65,4 +65,8 @@ public class ItemSet {
                 output.toString() +
                 '}';
     }
+
+    public int getUnlockLvl() {
+        return unlockLvl;
+    }
 }

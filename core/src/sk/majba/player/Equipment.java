@@ -33,21 +33,21 @@ public class Equipment {
 
     public void setGear(Item item) {
         if (item instanceof Weapon) {
-            this.equipment.put(((Weapon)item).getWeaponRange().toString(), item);
+            this.equipment.put(((Weapon)item).getWeaponRange().getWeaponType(), item);
         } else if (item instanceof Armor) {
-            this.equipment.put(((Armor)item).getArmorType().toString(), item);
+            this.equipment.put(((Armor)item).getArmorType().getArmorType(), item);
         }
     }
 
-    public void setGear(ArrayList<Item> items) {
-        for (int i = 0; i < items.size(); i++) {
-            if (items.get(i) instanceof Weapon) {
-                this.equipment.put(((Weapon)items.get(i)).getWeaponRange().getWeaponType(), items.get(i));
-            } else if (items.get(i) instanceof Armor) {
-                this.equipment.put(((Armor)items.get(i)).getArmorType().getArmorType(), items.get(i));
-            }
-        }
-    }
+//    public void setGear(ArrayList<Item> items) {
+//        for (int i = 0; i < items.size(); i++) {
+//            if (items.get(i) instanceof Weapon) {
+//                this.equipment.put(((Weapon)items.get(i)).getWeaponRange().getWeaponType(), items.get(i));
+//            } else if (items.get(i) instanceof Armor) {
+//                this.equipment.put(((Armor)items.get(i)).getArmorType().getArmorType(), items.get(i));
+//            }
+//        }
+//    }
 
     public boolean isFull() {
         //Naplnenie Equipmentu vsetkymi druhmi armoru
@@ -78,13 +78,13 @@ public class Equipment {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-
         for (int i = 0; i < ArmorType.values().length; i++) {
             stringBuilder.append(ArmorType.values()[i].getArmorType()).append(" ");
+
             try {
-                stringBuilder.append(this.equipment.get(ArmorType.values()[i].getArmorType()).getName()).append(" ");
+                stringBuilder.append(this.equipment.get(ArmorType.values()[i].getArmorType()).getName()).append("\n");
             } catch (NullPointerException e) {
-                stringBuilder.append("nic").append(" ");
+                stringBuilder.append("nic").append("\n");
             }
         }
 
@@ -92,9 +92,9 @@ public class Equipment {
         for (int i = 0; i < WeaponRange.values().length; i++) {
             stringBuilder.append(WeaponRange.values()[i].getWeaponType()).append(" ");
             try {
-                stringBuilder.append(this.equipment.get(WeaponRange.values()[i].getWeaponType()).getName()).append(" ");
+                stringBuilder.append(this.equipment.get(WeaponRange.values()[i].getWeaponType()).getName()).append("\n");
             } catch (NullPointerException e) {
-                stringBuilder.append("nic").append(" ");
+                stringBuilder.append("nic").append("\n");
             }
         }
         return stringBuilder.toString();

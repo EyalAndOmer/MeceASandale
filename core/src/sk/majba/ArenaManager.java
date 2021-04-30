@@ -23,24 +23,25 @@ public class ArenaManager {
     }
 
     public Fighter generateOpponent() throws NotAllAttributesPresentException {
-        int[] aiAttributes = new int[AttributeType.values().length];
+        int[] aiAttributes;
         int numberOfAttributePoints = hrac.getAtributy().getAttributePointsTotal();
         aiAttributes = this.attributeGeneration(numberOfAttributePoints);
         Fighter opponent = new Fighter("Artificial the First", hrac.getLevel(), new Atributy(aiAttributes));
-        this.gearGeneration(hrac.getPowerPoints(), opponent, aiAttributes);
+        opponent.setGear(this.gearGeneration(hrac.getPowerPoints(), opponent, aiAttributes));
+        System.out.println(opponent.toString());
         return null;
     }
 
-    private int[] attributeGeneration(int number) {
+    private int[] attributeGeneration(int numberOfAttributePoints) {
         int numberOfAttributes = AttributeType.values().length;
         int[] randomAttributes = new int[numberOfAttributes];
-        HashSet<Integer> set = new HashSet<Integer>();
+        HashSet<Integer> set = new HashSet<>();
 
-        set.add(number);
+        set.add(numberOfAttributePoints);
         set.add(0);
 
         while (set.size() <= numberOfAttributes) {
-            set.add(1 + this.random.nextInt(number - 1));
+            set.add(1 + this.random.nextInt(numberOfAttributePoints - 1));
         }
 
         Integer[] randomNumbers = set.toArray(new Integer[numberOfAttributes + 1]);
@@ -53,24 +54,13 @@ public class ArenaManager {
         return randomAttributes;
     }
 
-    private void gearGeneration(int powerPoints, Fighter ai, int[] aiAttributePoints) {
+    private Item[] gearGeneration(int powerPoints, Fighter ai, int[] aiAttributePoints) {
         int actualPowerPoints = ai.getPowerPoints();
 
-        ArrayList<Item> allItems = new ArrayList<>();
-
-        //Ziskaj vsetky itemy
-        for (int i = 0; i < this.gameArea.getItemSets().size(); i++) {
-            for (int j = 0; j < this.gameArea.getItemSets().get(i).getItemSetItems().length; j++) {
-                if (this.gameArea.getItemSets().get(i).getItemSetItems()[j] != null) {
-                    allItems.add(this.gameArea.getItemSets().get(i).getItemSetItems()[j]);
-                }
-            }
-        }
-
-        ArrayList<TreeMap<Integer, Item>> allItemCategorized = new ArrayList<>();
         Equipment items = new Equipment();
         ArrayList<Item> alreadyGeneratedItems = new ArrayList<>();
-        ArrayList<ItemSet> allItemSets = new ArrayList<>(this.gameArea.getItemSets());
+        ArrayList<ItemSet> allowedItemSets =
+                new ArrayList<>(this.gameArea.getItemSetsCatalog().filterItemSetsByLevel(ai.getLevel()));
 
         String[] itemTypes = items.getItemTypes();
 
@@ -82,8 +72,8 @@ public class ArenaManager {
             if (allItemTypes.size() > 0) {
                 randomCategoryNumber = this.random.nextInt(allItemTypes.size());
                 String currentCategory = allItemTypes.get(randomCategoryNumber);
-                int randomItemSetNumber = this.random.nextInt(allItemSets.size());
-                ItemSet randomItemSet = allItemSets.get(randomItemSetNumber);
+                int randomItemSetNumber = this.random.nextInt(allowedItemSets.size());
+                ItemSet randomItemSet = allowedItemSets.get(randomItemSetNumber);
                 alreadyGeneratedItems.add(randomItemSet.getItemFromSet(currentCategory));
                 allItemTypes.remove(currentCategory);
             }
@@ -92,8 +82,7 @@ public class ArenaManager {
                 running = false;
             }
         }
-        items.setGear(alreadyGeneratedItems);
-        System.out.println(items.toString());
 
+        return alreadyGeneratedItems.toArray(new Item[0]);
     }
 }

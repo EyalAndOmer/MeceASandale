@@ -1,20 +1,13 @@
 package sk.majba;
 
-import sk.majba.items.Armor;
-import sk.majba.items.ArmorType;
-import sk.majba.items.ItemSet;
-import sk.majba.items.ItemType;
-import sk.majba.items.NotAllItemsRequiredForItemSetException;
-import sk.majba.items.Weapon;
-import sk.majba.items.WeaponRange;
-import sk.majba.items.WeaponType;
+import sk.majba.items.*;
 
 import java.util.ArrayList;
 
 public class GameArea {
-    private ArrayList<ItemSet> itemSets;
+    private ItemSetsCatalog itemSetsCatalog;
     public GameArea() throws NotAllItemsRequiredForItemSetException {
-        this.itemSets = new ArrayList<>();
+        this.itemSetsCatalog = new ItemSetsCatalog();
         //Vytvaranie novych ItemSetov
         Weapon basicMec = new Weapon("basicMec", ItemType.WEAPON, WeaponRange.MELEE,
                 WeaponType.SWORD, 2, 6, 50, 500);
@@ -31,19 +24,38 @@ public class GameArea {
         Armor basicNohy = new Armor("basicNohy", ItemType.ARMOR, ArmorType.LEGS, 200,
                 10, 100);
 
-        ItemSet basicSet = new ItemSet(1, basicMec, basicPrak, basicHelma, basicChestplate, basicShield,
-                basicRuky, basicNohy);
-        this.itemSets.add(basicSet);
-
         Weapon ostraPalica = new Weapon("ostraPalica", ItemType.WEAPON, WeaponRange.MELEE,
                 WeaponType.NONBUYABLE, 1, 4, 50, 5);
 
-        ItemSet sedlak = new ItemSet(1, ostraPalica, null, null, null, null, null, null);
-        this.itemSets.add(sedlak);
+        Weapon beginnerMec = new Weapon("beginnerMec", ItemType.WEAPON, WeaponRange.MELEE,
+                WeaponType.SWORD, 2, 6, 50, 500);
+        Weapon beginnerLuk = new Weapon("beginnerLuk", ItemType.WEAPON, WeaponRange.RANGED, WeaponType.BOW,
+                1, 5, 50, 200);
+        Armor beginnerHelma = new Armor("beginnerHelma", ItemType.ARMOR, ArmorType.HEAD, 300,
+                20, 150);
+        Armor beginnerChestplate = new Armor("beginnerChestplate", ItemType.ARMOR, ArmorType.CHEST, 1000,
+                60, 400);
+        Armor beginnerShield = new Armor("beginnerShield", ItemType.ARMOR, ArmorType.SHIELD, 650,
+                30, 200);
+        Armor beginnerRuky = new Armor("beginnerRuky", ItemType.ARMOR, ArmorType.ARMS, 300,
+                20, 150);
+        Armor beginnerNohy = new Armor("beginnerNohy", ItemType.ARMOR, ArmorType.LEGS, 200,
+                10, 100);
 
+        ItemSet beginnerSet = new ItemSet(1, beginnerMec, beginnerLuk, beginnerHelma, beginnerChestplate,
+                beginnerShield, beginnerRuky, beginnerNohy);
+        ItemSet basicSet = new ItemSet(1, basicMec, basicPrak, basicHelma, basicChestplate, basicShield,
+                basicRuky, basicNohy);
+        ItemSet sedlak = new ItemSet(1, ostraPalica, null, null, null, null, null, null);
+
+        try {
+            this.itemSetsCatalog.addItemSets(sedlak, basicSet, beginnerSet);
+        } catch (DuplicateItemSetException e) {
+            e.printStackTrace();
+        }
     }
 
-    public ArrayList<ItemSet> getItemSets() {
-        return this.itemSets;
+    public ItemSetsCatalog getItemSetsCatalog() {
+        return itemSetsCatalog;
     }
 }
