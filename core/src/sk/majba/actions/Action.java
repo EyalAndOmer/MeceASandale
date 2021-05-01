@@ -5,8 +5,8 @@ import sk.majba.player.AttributeType;
 /**
  * Trieda Action bude mat na starosti kazdu akciu, ktora sa stane v hre
  */
-public class Action {
-    private AttributeType[] neededAttributes;
+public abstract class Action {
+    private final AttributeType[] neededAttributes;
     private int actionModifier;
 
     public Action(AttributeType ...neededAttributes) {
@@ -17,4 +17,5 @@ public class Action {
     public AttributeType[] getNeededAttributes() {
         return this.neededAttributes;
     }
+
 }
