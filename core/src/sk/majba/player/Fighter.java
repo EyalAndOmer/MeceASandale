@@ -30,6 +30,14 @@ public class Fighter {
         this.powerPoints = 0;
     }
 
+    public Fighter(Hrac hrac) {
+        this.meno = null;
+        this.level = hrac.getLevel();
+        this.atributy = null;
+        this.equipment = new Equipment();
+        this.powerPoints = 0;
+    }
+
     public String getMeno() {
         return meno;
     }

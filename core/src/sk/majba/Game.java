@@ -1,5 +1,6 @@
 package sk.majba;
 
+import sk.majba.arena.ArenaManager;
 import sk.majba.items.exceptions.NotAllItemsRequiredForItemSetException;
 import sk.majba.player.Atributy;
 import sk.majba.player.Hrac;
