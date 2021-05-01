@@ -1,5 +1,7 @@
 package sk.majba.actions;
 
-public interface IPerformableAction {
-    void performAction();
+import sk.majba.player.Fighter;
+
+public interface IPerformableAction<T> {
+    void performAction(Fighter fighter, T ...values);
 }
