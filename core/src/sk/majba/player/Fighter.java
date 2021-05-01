@@ -28,6 +28,10 @@ public class Fighter {
         this.atributy = atributy;
         this.equipment = new Equipment();
         this.powerPoints = 0;
+
+        this.health = 100;
+        this.armor = 0;
+        this.stamina = 100;
     }
 
     public Fighter(Hrac hrac) {
@@ -80,6 +84,10 @@ public class Fighter {
 
     public int getPowerPoints() {
         return this.powerPoints;
+    }
+
+    public boolean isDead() {
+        return this.health <= 0;
     }
 
     @Override
